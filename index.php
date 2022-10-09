@@ -1109,7 +1109,7 @@ if(preg_match('/^\/sparql_proxy.php/', $_SERVER["REQUEST_URI"])) return false;
 					
 						// thing or string?
 						if (response.data.work.author[i].id.match(/^(https?|urn)/)) {
-							html += '<a href="index.html?id=';
+							html += '<a href="?id=';
 							html += response.data.work.author[i].id;
 							html += '">';							
 						}
@@ -1141,7 +1141,7 @@ if(preg_match('/^\/sparql_proxy.php/', $_SERVER["REQUEST_URI"])) return false;
 						html += '<div style="padding-top:1em;">';
 						html += 'Published in ';
 						
-						html += '<a href="index.html?id=' + response.data.work.container.id + '">' 
+						html += '<a href="?id=' + response.data.work.container.id + '">' 
 							+ get_title(response.data.work.container.titles) 
 							+ '</a>';
 
@@ -1236,7 +1236,7 @@ if(preg_match('/^\/sparql_proxy.php/', $_SERVER["REQUEST_URI"])) return false;
 				for (var i in response.data.work.cites) {
 					if (response.data.work.cites[i].titles) {
 						html += '<li>';
-						html += '<a href="index.html?id=' + response.data.work.cites[i].id + '">' 
+						html += '<a href="?id=' + response.data.work.cites[i].id + '">' 
 							+ get_title(response.data.work.cites[i].titles) 
 							+ '</a>';
 
@@ -1256,7 +1256,7 @@ if(preg_match('/^\/sparql_proxy.php/', $_SERVER["REQUEST_URI"])) return false;
 				for (var i in response.data.work.cited_by) {
 					if (response.data.work.cited_by[i].titles) {
 						html += '<li>';
-						html += '<a href="index.html?id=' + response.data.work.cited_by[i].id + '">'
+						html += '<a href="?id=' + response.data.work.cited_by[i].id + '">'
 						 + get_title(response.data.work.cited_by[i].titles)
 						 + '</a>';
 				
@@ -1275,7 +1275,7 @@ if(preg_match('/^\/sparql_proxy.php/', $_SERVER["REQUEST_URI"])) return false;
 				for (var i in response.data.work.related) {
 					if (response.data.work.related[i].titles) {
 						html += '<li>';
-						html += '<a href="index.html?id=' + response.data.work.related[i].id + '">'
+						html += '<a href="?id=' + response.data.work.related[i].id + '">'
 						 + get_title(response.data.work.related[i].titles)
 						 + '</a>';
 						
@@ -1555,7 +1555,7 @@ if(preg_match('/^\/sparql_proxy.php/', $_SERVER["REQUEST_URI"])) return false;
 				html += '<ul>';
 				for (var i in response.data.container.hasPart) {
 					html += '<li>';
-					html += '<a href="index.html?id=' + response.data.container.hasPart[i].id + '">' + get_title(response.data.container.hasPart[i].titles) + '</a>';
+					html += '<a href="?id=' + response.data.container.hasPart[i].id + '">' + get_title(response.data.container.hasPart[i].titles) + '</a>';
 				
 					if(response.data.container.hasPart[i].doi) {
 						//html += '<br><span class="doi"><a href="https://doi.org/' + response.data.container.hasPart[i].doi + '" target="_new">' + response.data.container.hasPart[i].doi + '</a></span>';
