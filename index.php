@@ -16,7 +16,6 @@ if(preg_match('/^\/js/', $_SERVER["REQUEST_URI"])) return false;
 if(preg_match('/^\/sparql.html/', $_SERVER["REQUEST_URI"])) return false;
 if(preg_match('/^\/sparql_proxy.php/', $_SERVER["REQUEST_URI"])) return false;
 
-
 ?>
 
 <html>
@@ -46,8 +45,7 @@ if(preg_match('/^\/sparql_proxy.php/', $_SERVER["REQUEST_URI"])) return false;
 		color:white;
 		border-radius:4px;
 	}	
-	
-	
+		
 	input {
 		font-size:1em;
 	}
@@ -467,7 +465,7 @@ if(preg_match('/^\/sparql_proxy.php/', $_SERVER["REQUEST_URI"])) return false;
 				// LSID
 				
 				if (response.data.taxonName.id.match(/^urn:lsid/)) {
-					html += '<span class="lsid">' + '<a href="https://lsid-proxy.herokuapp.com/' + response.data.taxonName.id + '" target="_new">' + response.data.taxonName.id + '</a></span><br/>';				
+					html += '<span class="lsid">' + '<a href="https://lsid.io/' + response.data.taxonName.id + '" target="_new">' + response.data.taxonName.id + '</a></span><br/>';				
 				}
 
 				// URL
@@ -710,7 +708,7 @@ if(preg_match('/^\/sparql_proxy.php/', $_SERVER["REQUEST_URI"])) return false;
 			}			
 			
 			if (list[i].id.match(/^urn:lsid/)) {
-				html += '&nbsp;<span class="lsid">' + '<a href="https://lsid-proxy.herokuapp.com/' + list[i].id + '" target="_new">' + list[i].id + '</a></span><br/>';				
+				html += '&nbsp;<span class="lsid">' + '<a href="https://lsid.io/' + list[i].id + '" target="_new">' + list[i].id + '</a></span><br/>';				
 			}
 			
 			
