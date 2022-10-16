@@ -189,16 +189,18 @@ if(preg_match('/^\/sparql_proxy.php/', $_SERVER["REQUEST_URI"])) return false;
 	
 	
 	
-	<!--
+	
 	<h3>Examples</h3>
 	<div>		
-		<li><a href="./?id=https://doi.org/10.5852/ejt.2020.629">Revision of the aperturally dentate Charopidae (Gastropoda: Stylommatophora) of southern Africa - genus Afrodonta s. lat., with description of five new genera, twelve new species and one new subspecies</a></li>
-		<li><a href="./?id=https://doi.org/10.5281/zenodo.3762282">Fig. 1</a></li>
-		<li><a href="./?id=https://www.catalogueoflife.org/data/taxon/7NN8R">Afrodonta Melvill & Ponsonby, 1908</a></li>
+		<li><a href="./?id=https://doi.org/10.5281/zenodo.267559">FIGURES 135–140 in The Neotropical cuckoo wasp genus Ipsiura</a></li>
+		<li><a href="./?id=https://orcid.org/0000-0003-3952-9393">Terry Griswold</a></li>
+		<li><a href="./?id=https://doi.org/10.1080/00222930500145057">The genus Lilloiconcha in Colombia (Gastropoda: Charopidae)</a></li>
+		<li><a href="./?id=https://doi.org/10.1590/2175-7860201869402">Brazilian flora 2020: Innovation and collaboration to meet target 1 of the global strategy for plant conservation (GSPC)</a></li>
+		<li><a href="./?id=https://doi.org/10.11646/zootaxa.4196.3.9">Photography-based taxonomy is inadequate, unnecessary, and potentially harmful for biological sciences</a></li>
 	</div>
 
 	<hr/>
-	-->
+	
 
 	<div id="output"></div>
 	
@@ -465,7 +467,7 @@ if(preg_match('/^\/sparql_proxy.php/', $_SERVER["REQUEST_URI"])) return false;
 				// LSID
 				
 				if (response.data.taxonName.id.match(/^urn:lsid/)) {
-					html += '<span class="lsid">' + '<a href="https://lsid.herokuapp.com/' + response.data.taxonName.id + '/jsonld" target="_new">' + response.data.taxonName.id + '</a></span><br/>';				
+					html += '<span class="lsid">' + '<a href="https://lsid-proxy.herokuapp.com/' + response.data.taxonName.id + '" target="_new">' + response.data.taxonName.id + '</a></span><br/>';				
 				}
 
 				// URL
@@ -708,7 +710,7 @@ if(preg_match('/^\/sparql_proxy.php/', $_SERVER["REQUEST_URI"])) return false;
 			}			
 			
 			if (list[i].id.match(/^urn:lsid/)) {
-				html += '&nbsp;<span class="lsid">' + '<a href="https://lsid.herokuapp.com/' + list[i].id + '/jsonld" target="_new">' + list[i].id + '</a></span><br/>';				
+				html += '&nbsp;<span class="lsid">' + '<a href="https://lsid-proxy.herokuapp.com/' + list[i].id + '" target="_new">' + list[i].id + '</a></span><br/>';				
 			}
 			
 			
